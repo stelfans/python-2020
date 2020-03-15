@@ -2,45 +2,31 @@
 #########################################
 
 # Clear the terminal screen
+import sqlite3
 import os
-import namer
 os.system('clear')
 
-'''#fizzbuzz exmple
-num = 1
-fizzcount = 0
-buzzcount = 0
-fizzbuzzcount = 0
-
-while (num <= 1000000):
-	if (num % 3 == 0) and (num % 5 == 0):
-		print(str(num) + ": Fizzbuzz!")
-		fizzbuzzcount += 1
-	elif (num % 3 == 0):
-		print(str(num) + ": Fizz!")
-		fizzcount += 1
-	elif (num % 5 == 0):
-		print(str(num) + ": Buzz!")
-		buzzcount += 1
-	else:
-		print(str(num))
-	
-	num +=1
-
-print("----")
-print("Fizz\t\tBuzz\t\tFizzBuzz")
-print(str("{:,}".format(fizzcount)) + "\t\t" + str(buzzcount) + "\t\t" + str(fizzbuzzcount))
-
-
-####functions#####
-def mathit(num1, num2):
-	return (num1 + num2)
-
-outcome = mathit(9, 1)
-
-print(outcome *10)
+#conexao db
+conn = sqlite3.connect('customer.db')
+#cursor
+c = conn.cursor()
 '''
+#create table
+c.execute("""CREATE TABLE customer (
+			first_name text,
+			last_name text,
+			email text
+			)""")
+'''
+#c.execute("INSERT INTO customer VALUES ('Pedro','Dias','pedro@dias.com')")
+c.execute("SELECT * FROM customer")
+items = c.fetchall()
 
-####modules#####
+for i in items:
+	print(i)
 
-namer.nameit("Pedro")
+#commit na bd
+conn.commit()
+
+# fechar conexao
+conn.close()
