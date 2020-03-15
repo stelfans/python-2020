@@ -1,3 +1,6 @@
+#A começar pelo inicio como deve ser!####
+#########################################
+
 # Clear the terminal screen
 import os
 os.system('clear')
