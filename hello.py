@@ -3,9 +3,10 @@
 
 # Clear the terminal screen
 import os
+import namer
 os.system('clear')
 
-
+'''#fizzbuzz exmple
 num = 1
 fizzcount = 0
 buzzcount = 0
@@ -29,3 +30,17 @@ while (num <= 1000000):
 print("----")
 print("Fizz\t\tBuzz\t\tFizzBuzz")
 print(str("{:,}".format(fizzcount)) + "\t\t" + str(buzzcount) + "\t\t" + str(fizzbuzzcount))
+
+
+####functions#####
+def mathit(num1, num2):
+	return (num1 + num2)
+
+outcome = mathit(9, 1)
+
+print(outcome *10)
+'''
+
+####modules#####
+
+namer.nameit("Pedro")
